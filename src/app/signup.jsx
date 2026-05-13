@@ -1,55 +1,59 @@
-import { SafeAreaView, View, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
+import { router } from "expo-router";
 
-import AuthHeader from "../components/AuthHeader.jsx";
+import Header from "../components/Header.jsx";
 import InputField from "../components/InputField.jsx";
 import PrimaryButton from "../components/PrimaryButton.jsx";
-import FooterLinks from "../components/FooterLinks.jsx";
 
-export default function SignupScreen() {
-  return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: "#F7F7F7",
-      }}
-    >
-      <ScrollView
-        style={{
-          flex: 1,
-          paddingHorizontal: 24,
-          paddingTop: 70,
-        }}
-      >
-        <AuthHeader
-          title="Sign Up For Free"
-          subtitle="Sign up in 1 minute for free!"
-        />
+export default function SignUp() {
+    return (
+        <View
+            style={{
+                flex: 1,
+                padding: 24,
+                backgroundColor: "#f0eeee",
+            }}
+        >
+            <Header />
 
-        <InputField
-          label="Email Address"
-          placeholder="Enter your email..."
-        />
+            <InputField label="Email Address" placeholder="Enter your email" />
+            <InputField
+                label="Password"
+                placeholder="Enter your Password"
+                secureTextEntry={true}
+            />
+            <InputField
+                label="Password Confirmation"
+                placeholder="Confirm Password"
+                secureTextEntry={true}
+            />
 
-        <InputField
-          label="Password"
-          placeholder="Enter your password..."
-          secureTextEntry={true}
-        />
+            <PrimaryButton title="Sign Up" />
 
-        <InputField
-          label="Password Confirmation"
-          placeholder="Confirm password..."
-          secureTextEntry={true}
-        />
+            <Text
+                style={{
+                    textAlign: "center",
+                    marginTop: 40,
+                }}
+            >
+                Already have an account?
+            </Text>
 
-        <PrimaryButton title="Sign Up" />
-
-        <FooterLinks
-          text="Already have an account?"
-          actionText="Sign In"
-          route="/"
-        />
-      </ScrollView>
-    </SafeAreaView>
-  );
+            <TouchableOpacity
+                onPress={() => {
+                    router.push("/");
+                }}
+            >
+                <Text
+                    style={{
+                        textAlign: "center",
+                        color: "#95C334",
+                        marginTop: 10,
+                    }}
+                >
+                    Sign In
+                </Text>
+            </TouchableOpacity>
+        </View>
+    );
 }

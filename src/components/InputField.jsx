@@ -1,40 +1,32 @@
 import { View, Text, TextInput } from "react-native";
 
 export default function InputField({
-  label,
-  placeholder,
-  secureTextEntry,
+    label,
+    placeholder,
+    secureTextEntry = false,
 }) {
-  return (
-    <View
-      style={{
-        marginBottom: 20,
-      }}
-    >
-      <Text
-        style={{
-          fontSize: 14,
-          fontWeight: "600",
-          marginBottom: 8,
-          color: "#222",
-        }}
-      >
-        {label}
-      </Text>
+    return (
+        <View>
+            <Text
+                style={{
+                    fontSize: 10,
+                    marginTop: 20,
+                    paddingBottom: 5,
+                }}
+            >
+                {label}
+            </Text>
 
-      <TextInput
-        placeholder={placeholder}
-        placeholderTextColor="gray"
-        secureTextEntry={secureTextEntry}
-        style={{
-          height: 58,
-          backgroundColor: "white",
-          borderRadius: 18,
-          paddingHorizontal: 16,
-          borderWidth: 1,
-          borderColor: "#DCDCDC",
-        }}
-      />
-    </View>
-  );
+            <TextInput
+                placeholder={placeholder}
+                secureTextEntry={secureTextEntry}
+                style={{
+                    padding: 12,
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    borderColor: "#ccc",
+                }}
+            />
+        </View>
+    );
 }

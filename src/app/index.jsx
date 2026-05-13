@@ -1,52 +1,60 @@
-import { SafeAreaView, View, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, VirtualizedList } from "react-native";
+import { router } from "expo-router";
 
-import AuthHeader from "../components/AuthHeader";
-import InputField from "../components/InputField";
-import PrimaryButton from "../components/PrimaryButton";
-import SocialButtons from "../components/SocialButtons";
-import FooterLinks from "../components/FooterLinks";
+import Header from "../components/Header.jsx";
+import InputField from "../components/InputField.jsx";
+import PrimaryButton from "../components/PrimaryButton.jsx";
+import SocialLinks from "../components/SocialLinks.jsx";
 
 export default function HomeScreen() {
     return (
-        <SafeAreaView
+        <View
             style={{
                 flex: 1,
-                backgroundColor: "#F7F7F7",
+                padding: 24,
+                backgroundColor: "#f0eeee",
             }}
         >
-            <ScrollView
+            <Header />
+
+            <InputField
+                label="Email Address"
+                placeholder="Enter your email..."
+            />
+            <InputField
+                label="Password"
+                placeholder="Enter your Password..."
+                secureTextEntry={true}
+            />
+
+            <PrimaryButton title="Sign In" />
+
+            <SocialLinks />
+
+            <Text
                 style={{
-                    flex: 1,
-                    paddingHorizontal: 24,
-                    paddingTop: 70,
+                    textAlign: "center",
+                    marginTop: 40,
                 }}
             >
-                <AuthHeader
-                    title="Sign In"
-                    subtitle="Let's experience the joy of telecare AI."
-                />
+                Don't have an account?
+            </Text>
 
-                <InputField
-                    label="Email Address"
-                    placeholder="Enter your email..."
-                />
-
-                <InputField
-                    label="Password"
-                    placeholder="Enter your password..."
-                    secureTextEntry={true}
-                />
-
-                <PrimaryButton title="Sign In" />
-
-                <SocialButtons />
-
-                <FooterLinks
-                    text="Don't have an account?"
-                    actionText="Sign Up"
-                    route="/signup"
-                />
-            </ScrollView>
-        </SafeAreaView>
+            <TouchableOpacity
+                onPress={() => {
+                    router.push("/signUp");
+                }}
+            >
+                <Text
+                    style={{
+                        textAlign: "center",
+                        marginTop: 10,
+                        color: "#95C334",
+                    }}
+                >
+                    Sign Up
+                </Text>
+            </TouchableOpacity>
+        </View>
     );
 }
