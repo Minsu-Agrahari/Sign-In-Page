@@ -1,4 +1,5 @@
-import { View, Text, TextInput } from "react-native";
+import { Text, TextInput } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function InputField({
     label,
@@ -6,7 +7,7 @@ export default function InputField({
     secureTextEntry = false,
 }) {
     return (
-        <View>
+        <SafeAreaView>
             <Text
                 style={{
                     fontSize: 10,
@@ -27,6 +28,6 @@ export default function InputField({
                     borderColor: "#ccc",
                 }}
             />
-        </View>
+        </SafeAreaView>
     );
 }

@@ -1,8 +1,9 @@
-import { View, Image, Text } from "react-native";
+import { Image, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Header() {
     return (
-        <View
+        <SafeAreaView
             style={{
                 justifyContent: "center",
                 alignItems: "center",
@@ -33,6 +34,6 @@ export default function Header() {
             >
                 Let's experience the joy of telecare AI.
             </Text>
-        </View>
+        </SafeAreaView>
     );
 }

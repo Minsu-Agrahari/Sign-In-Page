@@ -1,4 +1,5 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
 import Header from "../components/Header.jsx";
@@ -7,7 +8,7 @@ import PrimaryButton from "../components/PrimaryButton.jsx";
 
 export default function SignUp() {
     return (
-        <View
+        <SafeAreaView
             style={{
                 flex: 1,
                 padding: 24,
@@ -54,6 +55,6 @@ export default function SignUp() {
                     Sign In
                 </Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     );
 }

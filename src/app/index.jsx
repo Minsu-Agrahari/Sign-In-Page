@@ -1,4 +1,5 @@
-import { View, Text, TouchableOpacity, VirtualizedList } from "react-native";
+import { Text, TouchableOpacity, VirtualizedList } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
 import Header from "../components/Header.jsx";
@@ -8,7 +9,7 @@ import SocialLinks from "../components/SocialLinks.jsx";
 
 export default function HomeScreen() {
     return (
-        <View
+        <SafeAreaView
             style={{
                 flex: 1,
                 padding: 24,
@@ -55,6 +56,6 @@ export default function HomeScreen() {
                     Sign Up
                 </Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     );
 }
