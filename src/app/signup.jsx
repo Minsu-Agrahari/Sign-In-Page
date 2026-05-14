@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity } from "react-native";
+import { StatusBar, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
@@ -15,6 +15,7 @@ export default function SignUp() {
                 backgroundColor: "#f0eeee",
             }}
         >
+            <StatusBar barStyle={"dark-content"}/>
             <Header />
 
             <InputField label="Email Address" placeholder="Enter your email" />

@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, VirtualizedList } from "react-native";
+import { StatusBar, Text, TouchableOpacity, VirtualizedList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
@@ -16,6 +16,7 @@ export default function HomeScreen() {
                 backgroundColor: "#f0eeee",
             }}
         >
+            <StatusBar barStyle={"dark-content"}/>
             <Header />
 
             <InputField
